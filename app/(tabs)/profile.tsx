@@ -3,7 +3,7 @@ import React, { useCallback, useState } from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-native';
 import { auth, db } from '../../firebaseConfig';
 import { useFocusEffect } from 'expo-router';
-import profileImage from '../../assets/images/demo.jpg'; // replace with your actual path
+import profileImage from '../../assets/images/demo.jpg'; 
 
 export default function ProfileScreen() {
   const [createdEvents, setCreatedEvents] = useState([]);
@@ -20,7 +20,7 @@ export default function ProfileScreen() {
     });
 
     try {
-      // 🔖 Booked Events
+     
       const bookingQuery = query(collection(db, 'bookings'), where('userId', '==', user.uid));
       const bookingSnap = await getDocs(bookingQuery);
       const bookings = bookingSnap.docs.map(doc => ({
@@ -28,7 +28,7 @@ export default function ProfileScreen() {
         ...doc.data(),
       }));
 
-      // ✏️ Created Events
+   
       const createdQuery = query(collection(db, 'events'), where('creatorId', '==', user.uid));
       const createdSnap = await getDocs(createdQuery);
       const created = createdSnap.docs.map(doc => ({
