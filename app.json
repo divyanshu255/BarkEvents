@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "BarkEvent",
+    "name": "BarkEvents",
     "slug": "03",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,16 +8,27 @@
     "scheme": "03",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "description": "The ultimate app for dog lovers to discover and create events for their furry friends!",
+    "privacy": "public",
+    "platforms": ["ios", "android"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.barkevent.app"
     },
     "android": {
       "package": "com.barkevent.app",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/doglogo.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE"
+      ],
+      "enableProguard": true,
+      "enableShrinkResourcesInReleaseBuilds": true
     },
     "web": {
       "bundler": "metro",
